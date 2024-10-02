@@ -9,6 +9,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.svm import LinearSVC
 from sklearn.metrics import *
 from sklearn.model_selection import train_test_split
+import pickle
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -80,3 +81,14 @@ m_predict = model.predict(X_test)
 m_score = model.score(X_test, Y_test)
 msg = "%s: train = %.3f (%.3f) / test = %.3f" % (name, cv_results.mean(), cv_results.std(), m_score)
 print(msg)
+
+# Сохранение модели 
+filename = 'LSVC_model.sav'
+pickle.dump(m_fit, open(filename, 'wb')) 
+  
+# Загрузка модели
+load_model = pickle.load(open(filename, 'rb')) 
+
+X_input = list(input())
+y_input = load_model.predict(X_input)
+print(y_input)
