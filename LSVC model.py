@@ -137,7 +137,7 @@ y_input = pd.DataFrame(load_model.predict(X_input))
 # print(y_input)
 
 # Создаём ранжированный словарь
-ranged_dict = dict(Counter(y_input))
+ranged_dict = dict(Counter(y_input[0].values))
 print(f"Словарь с частотностью ключевых слов: {ranged_dict}")
 
 comment_words = ''           
