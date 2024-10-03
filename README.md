@@ -37,6 +37,7 @@
 
 "dataset_with_syn.txt"
 
+![image](https://github.com/user-attachments/assets/7a91bd02-30d5-4a10-bd5f-60fddbfdb336)
 
 
 "dataset.txt"
