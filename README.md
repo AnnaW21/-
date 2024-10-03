@@ -17,8 +17,30 @@
 
 # Сравнение моделей для классификации
 
+**Для сравнения были выбраны следующие модели:**
+
+Линейные алгоритмы:
+1) Логистическая регрессия / Logistic Regression (‘LR’)
+
+Нелинейные алгоритмы:
+2) Метод k-ближайших соседей (классификация) / K-Neighbors Classifier (‘KNN’)
+3) Деревья принятия решений / Decision Tree Classifier (‘CART’)
+4) Линейный метод опорных векторов (классификация) / Linear Support Vector Classification (‘LSVC’)
+5) Метод опорных векторов (классификация) / C-Support Vector Classification (‘SVC’)
+
+Ансамблевые алгоритмы:
+6) Случайный лес (классификация) / Random Forest Classifier (‘RF’)
+7) Экстра-деревья (классификация) / Extra Trees Classifier (‘ET’)
+8) AdaBoost (классификация) / AdaBoost Classifier (‘AB’) (AdaBoost = Adaptive Boosting)
+
+**Обучение каждой модели проводилось на двух наборах данных:**
+
+"dataset_with_syn.txt"
+
+
 
 "dataset.txt"
+
 ![image](https://github.com/user-attachments/assets/6d8915d9-a5b9-4813-88f1-5a97fb763bdc)
 
 
@@ -30,6 +52,7 @@
 4) Удаление стоп-слов
 5) Лемматизация слов в предложении
 6) Векторизация предложений
+   
 ![image](https://github.com/user-attachments/assets/f5356759-f488-46b8-82fd-155b0271872b)
 
 **Обучение модели**
@@ -54,16 +77,20 @@
 
 - Из полученного списка ключевых слов мы составляем словарь, где в качестве ключа ключевое слово, в качестве значения - частота встречаемости слова в списке
 - Помимо словаря на основе полученного списка мы составляем облако ключевых слов
+  
   ![image](https://github.com/user-attachments/assets/d50e1b89-0b81-454b-8bf0-c5724128f307)
 
 # Пользовательский интерфейс
 
 В качестве пользовательского интерфейса для отправки файлов с ответами пользователей модели было выбрано два варианта:
 1) **Веб-интерфейс**
+   
    ![image](https://github.com/user-attachments/assets/9ec5fba7-7afa-49a0-b23b-6477ea9b7f20)
 
 3) **telegram-бот**
+   
    ![image](https://github.com/user-attachments/assets/22090443-1e0e-476a-a3a5-bc22288945dd)
+   
 **Ссылка на telegram-бот**: http://t.me/MTSLinkII_bot
 
 # Ссылка на ноутбук с кодом решения
