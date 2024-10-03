@@ -61,20 +61,17 @@ df_rus['Ключевое слово'] = df_rus['Ключевое слово'].st
 test_size = 0.2
 seed = 7
 X_train, X_test, Y_train, Y_test = train_test_split(df_rus['Ответ'], df_rus['Ключевое слово'], test_size=test_size, random_state=seed)
-print(df_rus['Ключевое слово'])
-print(Y_train, type(Y_train))
 
 # Настройка параметров оценивания алгоритма
 num_folds = 10
 n_estimators = 100
 scoring = 'accuracy'
 
-#Векторизуем
+# Векторизуем
 vectorizer = CountVectorizer(ngram_range=(1, 3))
-#векторизуем обучающую выборку
+# векторизуем обучающую выборку
 X_train = vectorizer.fit_transform(X_train)
-#и тестовую
-print("type(X_test)", type(X_test))
+# и тестовую
 X_test = vectorizer.transform(X_test)
 
 # Оценивание эффективности выполнения каждого алгоритма
@@ -103,10 +100,7 @@ load_model = pickle.load(open(filename, 'rb'))
 
 X_input = str(input())
 lst_of_frases = X_input.split(";")
-print(lst_of_frases)
-
 df = pd.DataFrame(lst_of_frases)
-print(df)
 
 for i in range(df.shape[0]):
   try: 
@@ -140,11 +134,11 @@ X_input = vectorizer.transform(df[0])
 
 # Используем модель для предсказания ключевых слов
 y_input = pd.DataFrame(load_model.predict(X_input))
-print(y_input)
+# print(y_input)
 
 # Создаём ранжированный словарь
 ranged_dict = dict(Counter(y_input))
-print(ranged_dict)
+print(f"Словарь с частотностью ключевых слов: {ranged_dict}")
 
 comment_words = ''           
 values = y_input[0].values
@@ -157,8 +151,6 @@ for val in values:
     comment_words += ' '.join(tokens)+' '
 
 facecolor = 'black'
-print(comment_words)
-
 wordcloud = WordCloud(width=1000, height=600, 
             background_color=facecolor,
             min_font_size=10).generate(comment_words)
