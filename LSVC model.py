@@ -23,6 +23,7 @@ nltk.download('wordnet')
 # Список стоп-слов для русского языка
 stopwords_rus = stopwords.words('russian')
 
+# df_rus = pd.read_csv("dataset_with_syn.txt")
 df_rus = pd.read_csv("dataset.txt")
 df_rus = df_rus.dropna()
 
